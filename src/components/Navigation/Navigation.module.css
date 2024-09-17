@@ -1,0 +1,22 @@
+.link {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 24px;
+  font-weight: 500;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.active {
+  color: #483003;
+}
+
+.link:hover {
+  background-color: #543803;
+  border-radius: 12px;
+  color: #ffffff;
+}
+.container {
+  display: flex;
+  gap: 10px;
+}

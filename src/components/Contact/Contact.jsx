@@ -1,27 +1,29 @@
 import css from "./Contact.module.css";
+import { IoMdPerson } from "react-icons/io";
+import { FaPhone } from "react-icons/fa";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsOps.js";
-import { BsFillTelephoneInboundFill } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
+import { apiDeleteContact } from "../../redux/contacts/operations";
 
-const Contact = ({ contact: { id, name, number } }) => {
+const Contact = ({ name, number, id }) => {
   const dispatch = useDispatch();
+  const handleDelete = () => dispatch(apiDeleteContact(id));
+
   return (
-    <>
-      <div className={css.contactWrapper}>
-        <div className={css.contactTextWrapper}>
-          <FaUser size={34} />
-          <p>{name}</p>
-        </div>
-        <div className={css.contactTextWrapper}>
-          <BsFillTelephoneInboundFill size={34} />
-          <p>{number}</p>
-        </div>
+    <li className={css.item}>
+      <div className={css.userData}>
+        <p className={css.line}>
+          <IoMdPerson />
+          {name}
+        </p>
+        <p className={css.line}>
+          <FaPhone />
+          {number}
+        </p>
       </div>
-      <button type="button" onClick={() => dispatch(deleteContact(id))}>
+      <button className={css.button} type="button" onClick={handleDelete}>
         Delete
       </button>
-    </>
+    </li>
   );
 };
 

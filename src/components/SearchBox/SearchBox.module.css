@@ -1,14 +1,27 @@
-.filtercontainer {
+.container {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid black;
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-width: 520px;
-  margin-bottom: 48px;
+  padding: 10px;
+  width: 300px;
 }
-.filterinput {
+.field {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 4px 8px;
+  margin-bottom: 8px;
+  outline: none;
+  border: 2px solid grey;
   border-radius: 4px;
-  border: 2px solid rgb(98, 98, 98);
+  transition: border 250ms ease-in-out;
 }
-.filterlabel {
-  text-align: left;
+.field:focus {
+  border: 2px solid rgb(163, 131, 6);
+}
+
+.field:hover {
+  border: 2px solid rgb(0, 0, 0);
 }
